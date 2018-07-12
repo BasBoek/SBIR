@@ -8,17 +8,16 @@ library(maptools)
 library(rgdal)
 library(rgeos)
 
-
-# FILE AND FOLDER LOCATIONS
-SAT_dir <- "C:/Data/SBIR/data/Landsat_Sentinel_RapidEye/"
-SHAPE_loc <- "C:/Data/SBIR/data/Pilotdata_omgevormd/Omgevormde_data_pilotgebied_SBIR_MAAN_fase2.shp"
-STATS_dir <- "C:/Data/SBIR/data/Statistics/all_sats/01_perceelstats/"
-
 # Give "run" a unique name and determine the number of percelen with "selectie"
 run <- "run7"
 selectie <- 1321:1540
 
-# Loading shapefile & make selection (2015-2016)
+
+# FILE AND FOLDER LOCATIONS
+SAT_dir <- "C:/Data/SBIR/data/Landsat_Sentinel_RapidEye/"
+SHAPE_loc <- "data/percelen/01_gebied1/02_omgevormde_data"
+SHAPE_filename <- "Omgevormde_data_pilotgebied_SBIR_MAAN_fase2"
+STATS_dir <- "C:/Data/SBIR/data/Statistics/all_sats/01_perceelstats/"
 
 #####################################
 ######## Loading raster data ########
@@ -30,7 +29,7 @@ images <- list.files(path = SAT_dir, pattern = "tct.img$", full.names = T)
 ###### Loading shapefile data #######
 #####################################
 
-percelen_raw <- readShapePoly(SHAPE_loc)
+percelen_raw <- readOGR(dsn = SHAPE_loc, layer = SHAPE_filename)
 
 ################################### select percelen ######################################
 
