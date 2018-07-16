@@ -7,7 +7,7 @@ library(Publish)
 library(calibrate)
 #library(bfast)
 library(data.table)  
-source("C:/Data/SBIR/modellen/R_functions/functions.R")
+source("R/03a_mutation_determinator.R")
 
 DIR_outliers  <- "C:/Data/SBIR/data/Statistics/all_sats/02_outliers/"
 DIR_yearstats <- "C:/Data/SBIR/data/Statistics/all_sats/03_yearstats/"

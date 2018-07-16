@@ -35,7 +35,7 @@ percelen_raw <- readOGR(dsn = SHAPE_loc, layer = SHAPE_filename)
 
 percelen <- percelen_raw
 #percelen <- percelen[percelen$SHAPE_AREA > 15000,]
-percelen <- percelen[,(names(percelen) %in% c("OBJECTID","categorie", "periode"))] #remove columns
+percelen <- percelen[,(names(percelen) %in% c("OBJECTID", "categorie", "periode"))] #remove columns
 
 sel1 <- percelen[percelen$categorie == "Gemuteerd" & percelen$periode != "2009_2015",]
 sel2 <- percelen[percelen$categorie == "Nieuw ingetekend vlak - voorheen gemuteerd",]
