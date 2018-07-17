@@ -1,9 +1,9 @@
 # Bastiaen Boekelo
 # Date: June 2018
-# Goal: Creating library for functions
+# Goal: Mutation or not (0 or 1)
 
 nr_mutations <- function(input, date, sd_val){ # SET SD
-  result <- matrix(, nrow = 0, ncol = 2050)
+  #result <- matrix(, nrow = 0, ncol = 2050)
   outlier <- c()
   for(i in 1:length(input)){
     h <- 0

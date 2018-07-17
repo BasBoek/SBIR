@@ -33,7 +33,7 @@ ZONAL_STATS <- function(images, input_perceeldata, STATS_dir, minimum_nr_of_pixe
             img_mask  <- mask(img_crop, perceel)
             #plot(img_mask[[1]])
             for(BAND in 1:3){
-              pixels <- as.matrix(img_mask[[1]])
+              pixels <- as.matrix(img_mask[[BAND]])
               i <- i + 1
               b_max <- max(pixels, na.rm=T)
               b_min <- min(pixels, na.rm=T)

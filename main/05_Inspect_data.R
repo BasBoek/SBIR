@@ -392,9 +392,6 @@ write.csv(allstats, paste("C:/Data/SBIR/data/Statistics/all_sats/05_variables/va
 # Inspect data
 
 files <- list.files(path = "C:/Data/SBIR/data/Statistics/all_sats/05_variables/",pattern = "varstats", recursive=T, full.names=T)
-
-# read data
-
 i <- 0
 for(FILE in files){
   i <- i + 1
