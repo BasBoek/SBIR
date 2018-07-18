@@ -9,9 +9,6 @@ library(plyr)
 library(xlsx)
 rm(list=ls())
 
-#p_raw <- readShapePoly("C:/Data/SBIR/data/Statistics/all_sats/04_yearstats_shape/Statistieken_percelen.shp")
-#p_raw <- read.csv("C:/Data/SBIR/data/Statistics/all_sats/03_yearstats_1_file/Yearstats_all.csv")
-
 # Gratis lesje: never use (!) 'readShapePoly', but readOGR instead if you don't want to screw your data
 p_raw <- readOGR(dsn = 'C:/Data/SBIR/data/Statistics/all_sats/04_yearstats_shape', layer = 'Statistieken_percelen')
 
