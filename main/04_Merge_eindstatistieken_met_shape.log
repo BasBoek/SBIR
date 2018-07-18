@@ -1,0 +1,163 @@
+2018-07-18 13:37:25|   0.1|  0.1|INFORM|FME 2018.0.1.1 (20180615 - Build 18312 - WIN64)
+2018-07-18 13:37:25|   0.1|  0.0|INFORM|FME_HOME is 'C:\Program Files\FME\'
+2018-07-18 13:37:25|   0.1|  0.0|INFORM|FME Desktop Professional Edition (floating)
+2018-07-18 13:37:25|   0.1|  0.0|INFORM|Permanent License.
+2018-07-18 13:37:25|   0.1|  0.0|INFORM|Machine host name is: DESKTOP-QTNS6T3
+2018-07-18 13:37:25|   0.1|  0.0|INFORM|START - ProcessID: 11064, peak process memory usage: 30480 kB, current process memory usage: 30480 kB
+2018-07-18 13:37:25|   0.1|  0.0|INFORM|FME Configuration: Command line arguments are `C:\Program Files\FME\fme.exe' `C:/Git_SBIR/SBIR_MAAN/main\wb-xlate-1531913840943_11836' `LOG_STANDARDOUT' `YES' `LogCountServerName' `{6758d8d0-d6e1-42d3-82c2-f77a5b78de88}'
+2018-07-18 13:37:25|   0.1|  0.0|INFORM|FME Configuration: Connection Storage: 'C:\Users\Cobra_rekenplek\AppData\Roaming\Safe Software\FME\'
+2018-07-18 13:37:25|   0.1|  0.0|INFORM|Shared folders for formats are : C:\Program Files\FME\datasources;C:\Users\Cobra_rekenplek\Documents\FME\Formats
+2018-07-18 13:37:25|   0.1|  0.0|INFORM|Shared folders for transformers are : C:\Users\Cobra_rekenplek\AppData\Roaming\Safe Software\FME\Packages\18312-win64\transformers;C:\Program Files\FME\transformers;C:\Users\Cobra_rekenplek\Documents\FME\Transformers;C:\Users\Cobra_rekenplek\AppData\Roaming\Safe Software\FME\FME Store\Transformers
+2018-07-18 13:37:25|   0.1|  0.0|INFORM|Shared folders for coordinate systems are : C:\Users\Cobra_rekenplek\Documents\FME\CoordinateSystems
+2018-07-18 13:37:25|   0.1|  0.0|INFORM|Shared folders for coordinate system exceptions are : C:\Users\Cobra_rekenplek\Documents\FME\CoordinateSystemExceptions
+2018-07-18 13:37:25|   0.1|  0.0|INFORM|Shared folders for coordinate system grid overrides are : C:\Users\Cobra_rekenplek\Documents\FME\CoordinateSystemGridOverrides
+2018-07-18 13:37:25|   0.1|  0.0|INFORM|Shared folders for CS-MAP transformation exceptions are : C:\Users\Cobra_rekenplek\Documents\FME\CsmapTransformationExceptions
+2018-07-18 13:37:25|   0.1|  0.0|INFORM|Shared folders for transformer categories are : C:\Users\Cobra_rekenplek\Documents\FME\TransformerCategories
+2018-07-18 13:37:25|   0.1|  0.0|INFORM|FME Configuration: Reader Keyword is `MULTI_READER'
+2018-07-18 13:37:25|   0.1|  0.0|INFORM|FME Configuration: Writer Keyword is `MULTI_WRITER'
+2018-07-18 13:37:25|   0.1|  0.0|INFORM|FME Configuration: Writer Group Definition Keyword is `MULTI_WRITER_DEF'
+2018-07-18 13:37:25|   0.2|  0.0|INFORM|FME Configuration: Reader type is `MULTI_READER'
+2018-07-18 13:37:25|   0.2|  0.0|INFORM|FME Configuration: Writer type is `MULTI_WRITER'
+2018-07-18 13:37:25|   0.2|  0.0|INFORM|FME Configuration: No destination coordinate system set
+2018-07-18 13:37:25|   0.2|  0.0|INFORM|FME Configuration: Current working folder is `C:\Git_SBIR\SBIR_MAAN\main'
+2018-07-18 13:37:25|   0.2|  0.0|INFORM|FME Configuration: Temporary folder is `C:\Users\COBRA_~1\AppData\Local\Temp', set from environment variable `TEMP'
+2018-07-18 13:37:25|   0.2|  0.0|INFORM|FME Configuration: FME_HOME is `C:\Program Files\FME\'
+2018-07-18 13:37:25|   0.2|  0.0|INFORM|FME Configuration: FME_BASE is 'no'
+2018-07-18 13:37:25|   0.2|  0.0|INFORM|FME Configuration: FME_MF_DIR is 'C:\Git_SBIR\SBIR_MAAN\main/'
+2018-07-18 13:37:25|   0.2|  0.0|INFORM|FME Configuration: FME_MF_NAME is '04_Merge_eindstatistieken_met_shape.fmw'
+2018-07-18 13:37:25|   0.2|  0.0|INFORM|FME Configuration: FME_PRODUCT_NAME is 'FME(R) 2018.0.1.1'
+2018-07-18 13:37:25|   0.2|  0.0|INFORM|System Status: 198.10 GB of disk space available in the FME temporary folder (C:\Users\COBRA_~1\AppData\Local\Temp)
+2018-07-18 13:37:25|   0.2|  0.0|INFORM|System Status: 128.00 TB of virtual memory available
+2018-07-18 13:37:25|   0.2|  0.0|INFORM|Operating System: Microsoft Windows 10 64-bit  (Build 17134)
+2018-07-18 13:37:25|   0.2|  0.0|INFORM|FME Platform: WIN64
+2018-07-18 13:37:25|   0.2|  0.0|INFORM|Locale: en_GB
+2018-07-18 13:37:25|   0.2|  0.0|INFORM|Code Page: 1252  (ANSI - Latin I)
+2018-07-18 13:37:25|   0.2|  0.0|INFORM|FME Configuration: Process limit is 63.70 GB of physical memory
+2018-07-18 13:37:25|   0.2|  0.0|INFORM|FME Configuration: Start freeing memory when process usage exceeds 191.10 GB of virtual memory
+2018-07-18 13:37:25|   0.2|  0.0|INFORM|FME Configuration: Stop freeing memory when process usage is below 143.33 GB of virtual memory
+2018-07-18 13:37:25|   0.2|  0.0|INFORM|Creating writer for format: 
+2018-07-18 13:37:25|   0.2|  0.0|INFORM|Creating reader for format: 
+2018-07-18 13:37:25|   0.2|  0.0|INFORM|MULTI_READER(MULTI_READER): Will fail with first member reader failure
+2018-07-18 13:37:25|   0.2|  0.0|INFORM|MULTI_READER(MULTI_READER): Adding ESRISHAPE Reader with keyword ESRISHAPE_1
+2018-07-18 13:37:25|   0.2|  0.0|INFORM|MULTI_READER(MULTI_READER): Adding CSV2 Reader with keyword CSV2_1
+2018-07-18 13:37:25|   0.2|  0.0|INFORM|Using Multi Reader with keyword `MULTI_READER' to read multiple datasets
+2018-07-18 13:37:25|   0.3|  0.1|INFORM|Creating reader for format: Esri Shapefile
+2018-07-18 13:37:25|   0.3|  0.0|INFORM|Using Shape Reader to read shape files from folder `C:\Data\SBIR\data\Pilotdata_omgevormd/'
+2018-07-18 13:37:25|   0.3|  0.0|INFORM|ESRISHAPE_1 Reader: Using enhanced geometry
+2018-07-18 13:37:25|   0.3|  0.0|INFORM|Shape Reader: Using simple donut geometry detection
+2018-07-18 13:37:25|   0.3|  0.0|INFORM|Shape Reader: Handling numeric types with standard integer and floating point types
+2018-07-18 13:37:25|   0.3|  0.0|INFORM|Shape Reader: Allowing attribute names with mixed case
+2018-07-18 13:37:25|   0.3|  0.0|INFORM|Opened Shape File 'C:\Data\SBIR\data\Pilotdata_omgevormd\Omgevormde_data_pilotgebied_SBIR_MAAN_fase2.shp' for input
+2018-07-18 13:37:25|   0.3|  0.0|INFORM|Opened DBF File 'C:\Data\SBIR\data\Pilotdata_omgevormd\Omgevormde_data_pilotgebied_SBIR_MAAN_fase2.dbf' for input
+2018-07-18 13:37:25|   0.3|  0.0|INFORM|DBF Reader: Detected character encoding `windows-1252'
+2018-07-18 13:37:25|   0.3|  0.0|INFORM|DBF File 'C:\Data\SBIR\data\Pilotdata_omgevormd\Omgevormde_data_pilotgebied_SBIR_MAAN_fase2.dbf' has fields: categorie char(200), periode char(200), OBJECTID long, FUNCTIONEE char(20), NEN3610ID char(60), FYSIEKVOOR char(100), GLOBALID char(38), SHAPE_AREA number(31,15), SHAPE_LEN number(31,15)
+2018-07-18 13:37:26|   0.5|  0.3|INFORM|The OGC definition of the FME coordinate system '_Netherlands-RDNew-2008_0' is 'PROJCS["RD_New",GEOGCS["GCS_Amersfoort",DATUM["D_Amersfoort",SPHEROID["Bessel_1841",6377397.155,299.1528128]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Double_Stereographic"],PARAMETER["False_Easting",155000.0],PARAMETER["False_Northing",463000.0],PARAMETER["Central_Meridian",5.38763888888889],PARAMETER["Scale_Factor",0.9999079],PARAMETER["Latitude_Of_Origin",52.15616055555555],UNIT["Meter",1.0]]'
+2018-07-18 13:37:26|   0.5|  0.0|INFORM|FME Configuration: Source coordinate system for reader ESRISHAPE_1[ESRISHAPE] set to `_Netherlands-RDNew-2008_0' as read from input data
+2018-07-18 13:37:26|   0.5|  0.0|INFORM|Coordinate System `_Netherlands-RDNew-2008_0' parameters: CS_NAME=`_Netherlands-RDNew-2008_0' DESC_NM=`Netherlands, Amersfoort RD 2008 datum, New System' DT_NAME=`Amersfoort-RD-2008' ESRI_WKT=`PROJCS["RD_New",GEOGCS["GCS_Amersfoort",DATUM["D_Amersfoort",SPHEROID["Bessel_1841",6377397.155,299.1528128]],PRIMEM["Greenwich",0.0],UNIT["Degree",0.0174532925199433]],PROJECTION["Double_Stereographic"],PARAMETER["False_Easting",155000.0],PARAMETER["False_Northing",463000.0],PARAMETER["Central_Meridian",5.38763888888889],PARAMETER["Scale_Factor",0.9999079],PARAMETER["Latitude_Of_Origin",52.15616055555555],UNIT["Meter",1.0]]' GROUP=`EUROPE' MAP_SCL=`1' ORG_LAT=`52.15616055555556' ORG_LNG=`5.387638888888889' PROJ=`OSTERO' QUAD=`1' SCL_RED=`0.9999079' SOURCE=`Kadaster' UNIT=`METER' X_OFF=`155000' Y_OFF=`463000' 
+2018-07-18 13:37:26|   0.5|  0.0|INFORM|Shape Reader: Bounding box of shapefile `C:\Data\SBIR\data\Pilotdata_omgevormd\OMGEVORMDE_DATA_PILOTGEBIED_SBIR_MAAN_FASE2' is: (176783.00169999897,521900.9574000016),(209436.99080000073,543761.2965999991)
+2018-07-18 13:37:26|   0.5|  0.0|INFORM|Shape Reader: Bounding box of shapefile(s) selected from folder `C:\Data\SBIR\data\Pilotdata_omgevormd/' is: (176783.00169999897,521900.9574000016),(209436.99080000073,543761.2965999991)
+2018-07-18 13:37:26|   0.5|  0.0|INFORM|Using MultiWriter with keyword `MULTI_WRITER' to output data (ID_ATTRIBUTE is `multi_writer_id')
+2018-07-18 13:37:26|   0.5|  0.0|INFORM|Writer output will be ordered by value of multi_writer_id
+2018-07-18 13:37:26|   0.6|  0.0|INFORM|Loaded module 'LogCount_func' from file 'C:\Program Files\FME\plugins/LogCount_func.dll'
+2018-07-18 13:37:26|   0.6|  0.0|INFORM|FME API version of module 'LogCount_func' matches current internal version (3.8 20180209)
+2018-07-18 13:37:26|   0.6|  0.0|INFORM|Loaded module 'FeatureJoinerFactory' from file 'C:\Program Files\FME\plugins/FeatureJoinerFactory.dll'
+2018-07-18 13:37:26|   0.6|  0.0|INFORM|FME API version of module 'FeatureJoinerFactory' matches current internal version (3.8 20180209)
+2018-07-18 13:37:26|   0.6|  0.0|INFORM|Loaded module 'InspectorFactory' from file 'C:\Program Files\FME\plugins/InspectorFactory.dll'
+2018-07-18 13:37:26|   0.6|  0.0|INFORM|FME API version of module 'InspectorFactory' matches current internal version (3.8 20180209)
+2018-07-18 13:37:26|   0.7|  0.1|INFORM|... Last line repeated 3 times ...
+2018-07-18 13:37:26|   0.7|  0.0|INFORM|Reading source feature # 2500
+2018-07-18 13:37:26|   0.7|  0.0|INFORM|Reading source feature # 5000
+2018-07-18 13:37:26|   0.8|  0.0|INFORM|Reading source feature # 7500
+2018-07-18 13:37:26|   0.8|  0.0|INFORM|Reading source feature # 10000
+2018-07-18 13:37:26|   1.0|  0.2|INFORM|Creating reader for format: CSV (Comma Separated Value)
+2018-07-18 13:37:26|   1.0|  0.0|INFORM|Trying to find a DYNAMIC plugin for reader named `CSV2'
+2018-07-18 13:37:26|   1.0|  0.0|INFORM|Loaded module 'CSV2' from file 'C:\Program Files\FME\plugins/CSV2.dll'
+2018-07-18 13:37:26|   1.0|  0.0|INFORM|FME API version of module 'CSV2' matches current internal version (3.8 20180209)
+2018-07-18 13:37:26|   1.0|  0.0|INFORM|CSV reader: Opening dataset 'C:\Data\SBIR\data\Statistics\all_sats\03_yearstats\02_all\Yearstats_all.csv'
+2018-07-18 13:37:26|   1.0|  0.0|INFORM|CSV reader: Directive '_DELIMITER' has the value ','
+2018-07-18 13:37:26|   1.0|  0.0|INFORM|CSV reader: Directive '_FIELD_NAMES_LINE' has the value '1'
+2018-07-18 13:37:26|   1.0|  0.0|INFORM|CSV reader: Directive '_DATA_START_LINE' has the value '2'
+2018-07-18 13:37:26|   1.0|  0.0|INFORM|CSV reader: Directive '_SCAN_MAX_ROWS' has the value '1000'
+2018-07-18 13:37:26|   1.0|  0.0|INFORM|CSV reader: Directive '_READ_SKIPPED_LINES' has the value 'No'
+2018-07-18 13:37:26|   1.0|  0.0|INFORM|CSV reader: Directive '_SKIP_DUPLICATE_DELIMITERS' has the value 'No'
+2018-07-18 13:37:26|   1.0|  0.0|INFORM|CSV reader: Directive '_FIELD_QUALIFIER_CHARACTER' has the value '"'
+2018-07-18 13:37:26|   1.0|  0.0|INFORM|CSV reader: Directive '_FIELD_QUALIFIER_ESCAPE_CHARACTER' has the value '"'
+2018-07-18 13:37:26|   1.0|  0.0|INFORM|CSV reader: Directive '_TRIM_FIELD_NAME_QUALIFIERS' has the value 'Yes'
+2018-07-18 13:37:26|   1.0|  0.0|INFORM|CSV reader: Directive '_TRIM_FIELD_VALUE_QUALIFIERS' has the value 'Yes'
+2018-07-18 13:37:26|   1.0|  0.0|INFORM|CSV reader: Directive '_PRESERVE_SOURCE_ENCODING' has the value 'No'
+2018-07-18 13:37:26|   1.0|  0.0|INFORM|CSV reader: Directive '_CASE_SENSITIVE_FIELD_NAMES' has the value 'Yes'
+2018-07-18 13:37:26|   1.0|  0.0|INFORM|CSV reader: Directive '_ENFORCE_STRICT_SCHEMA' has the value 'No'
+2018-07-18 13:37:26|   1.0|  0.0|INFORM|CSV reader: Directive '_SCAN_TYPES' has the value 'No'
+2018-07-18 13:37:26|   1.0|  0.0|INFORM|CSV reader: Directive '_SCAN_ADDITIONAL_FIELDS' has the value 'No'
+2018-07-18 13:37:26|   1.0|  0.0|WARN  |CSV reader: Attribute 'agg10' exists on the schema but was not found in the file. This attribute will not be read
+2018-07-18 13:37:26|   1.0|  0.0|WARN  |CSV reader: Attribute 'agg35' exists on the schema but was not found in the file. This attribute will not be read
+2018-07-18 13:37:26|   1.0|  0.0|WARN  |CSV reader: Attribute 'agg40' exists on the schema but was not found in the file. This attribute will not be read
+2018-07-18 13:37:26|   1.0|  0.0|INFORM|MULTI_READER(MULTI_READER): Done reading 12351 features from 2 readers
+2018-07-18 13:37:26|   1.0|  0.0|INFORM|Emptying factory pipeline
+2018-07-18 13:37:26|   1.0|  0.0|STATS |Router and Unexpected Input Remover(RoutingFactory): Tested 12351 input feature(s), wrote 12351 output feature(s): 12351 matched merge filters, 12351 were routed to output, 0 could not be routed.
+2018-07-18 13:37:26|   1.0|  0.0|STATS |Unexpected Input Remover Nuker(TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2018-07-18 13:37:26|   1.0|  0.0|STATS |CSV (CSV2_1) Splitter(TeeFactory): Cloned 270 input feature(s) into 270 output feature(s)
+2018-07-18 13:37:26|   1.0|  0.0|STATS |CSV_CSV2_1 Feature Counter -1 18(TeeFactory): Cloned 270 input feature(s) into 270 output feature(s)
+2018-07-18 13:37:26|   1.0|  0.0|STATS |Omgevormde_data_pilotgebied_SBIR_MAAN_fase2 (ESRISHAPE_1) Splitter(TeeFactory): Cloned 12081 input feature(s) into 12081 output feature(s)
+2018-07-18 13:37:26|   1.0|  0.0|STATS |Omgevormde_data_pilotgebied_SBIR_MAAN_fase2_ESRISHAPE_1 Feature Counter -1 6(TeeFactory): Cloned 12081 input feature(s) into 12081 output feature(s)
+2018-07-18 13:37:27|   1.2|  0.2|STATS |Storing feature(s) to FME feature store file `C:\Users\COBRA_~1\AppData\Local\Temp\04_Merge_eindstatistieken_met_shape_133725\inspector.ffs'
+2018-07-18 13:37:27|   1.2|  0.0|INFORM|FFS writer: Writing 270 feature(s) to file 'C:\Users\COBRA_~1\AppData\Local\Temp\04_Merge_eindstatistieken_met_shape_133725\inspector.fts'
+2018-07-18 13:37:27|   1.3|  0.0|INFORM|Spatial Index: Adding 270 features
+2018-07-18 13:37:27|   1.3|  0.0|INFORM|Creating writer for format: Esri Shapefile
+2018-07-18 13:37:27|   1.3|  0.0|INFORM|FME Configuration: No destination coordinate system set
+2018-07-18 13:37:27|   1.3|  0.0|INFORM|ESRISHAPE writer: Splitting feature table
+2018-07-18 13:37:27|   1.3|  0.0|INFORM|Using Shape Writer to write shape files to folder `C:\Data\SBIR\data\Statistics\all_sats\04_yearstats_shape'
+2018-07-18 13:37:27|   1.3|  0.0|INFORM|Shape Writer: Allowing attribute names with mixed case
+2018-07-18 13:37:27|   1.3|  0.0|INFORM|Shape Writer: Enabling Strict compatibility
+2018-07-18 13:37:27|   1.3|  0.0|INFORM|Writer `ESRISHAPE_2' of type `ESRISHAPE' using group definition keyword `ESRISHAPE_2_DEF'
+2018-07-18 13:37:27|   1.3|  0.0|INFORM|Shape Writer: Writing shape file using character encoding `SYSTEM'
+2018-07-18 13:37:27|   1.3|  0.0|INFORM|Shape Writer: Writing geometries with specified dimension 2d
+2018-07-18 13:37:27|   1.3|  0.0|INFORM|Opened Shape File 'C:\Data\SBIR\data\Statistics\all_sats\04_yearstats_shape\Statistieken_percelen.shp' for output
+2018-07-18 13:37:27|   1.3|  0.0|INFORM|Opened DBF file 'C:\Data\SBIR\data\Statistics\all_sats\04_yearstats_shape\Statistieken_percelen.dbf' for output
+2018-07-18 13:37:27|   1.3|  0.0|INFORM|DBF Writer: Writing DBF file using character encoding `SYSTEM'
+2018-07-18 13:37:27|   1.3|  0.0|INFORM|FFS writer: Writing 12076 feature(s) to file 'C:\Users\COBRA_~1\AppData\Local\Temp\04_Merge_eindstatistieken_met_shape_133725\inspector_1.fts'
+2018-07-18 13:37:27|   1.4|  0.1|INFORM|Spatial Index: Adding 12076 features
+2018-07-18 13:37:27|   1.5|  0.1|STATS |FeatureJoiner JOINED Splitter(TeeFactory): Cloned 270 input feature(s) into 540 output feature(s)
+2018-07-18 13:37:27|   1.5|  0.0|STATS |FeatureJoiner_JOINED_0_M7XHS11qut0= Feature Counter -1 8(TeeFactory): Cloned 270 input feature(s) into 270 output feature(s)
+2018-07-18 13:37:27|   1.5|  0.0|STATS |FeatureJoiner_JOINED_1_EKwMyi3FWMs= Feature Counter -1 16(TeeFactory): Cloned 270 input feature(s) into 270 output feature(s)
+2018-07-18 13:37:27|   1.5|  0.0|STATS |FeatureJoiner_UNJOINED_LEFT Feature Counter -1 10(TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2018-07-18 13:37:27|   1.5|  0.0|STATS |FeatureJoiner_UNJOINED_RIGHT Feature Counter -1 12(TeeFactory): Cloned 12076 input feature(s) into 12076 output feature(s)
+2018-07-18 13:37:27|   1.5|  0.0|STATS |FeatureJoiner_<REJECTED> Feature Counter -1 14(TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2018-07-18 13:37:27|   1.5|  0.0|INFORM|FeatureJoiner__Rejected__Recorder(RecorderFactory): Recorded 0 feature(s) to file `C:\Users\COBRA_~1\AppData\Local\Temp\04_Merge_eindstatistieken_met_shape_133725\inspector.ffs'
+2018-07-18 13:37:27|   1.5|  0.0|INFORM|FeatureJoiner_UnjoinedRight_Recorder(RecorderFactory): Recorded 12076 feature(s) to file `C:\Users\COBRA_~1\AppData\Local\Temp\04_Merge_eindstatistieken_met_shape_133725\inspector.ffs'
+2018-07-18 13:37:27|   1.5|  0.0|INFORM|FeatureJoiner_UnjoinedLeft_Recorder(RecorderFactory): Recorded 0 feature(s) to file `C:\Users\COBRA_~1\AppData\Local\Temp\04_Merge_eindstatistieken_met_shape_133725\inspector.ffs'
+2018-07-18 13:37:27|   1.5|  0.0|STATS |Stored 2 feature(s) to FME feature store file `C:\Users\COBRA_~1\AppData\Local\Temp\04_Merge_eindstatistieken_met_shape_133725\inspector.ffs'
+2018-07-18 13:37:27|   1.5|  0.0|INFORM|Saving spatial index into file 'C:\Users\COBRA_~1\AppData\Local\Temp\04_Merge_eindstatistieken_met_shape_133725\inspector.fsi'
+2018-07-18 13:37:27|   1.5|  0.0|INFORM|Finished saving spatial index into file 'C:\Users\COBRA_~1\AppData\Local\Temp\04_Merge_eindstatistieken_met_shape_133725\inspector.fsi'
+2018-07-18 13:37:27|   1.5|  0.0|INFORM|FeatureJoiner_Joined_Recorder(RecorderFactory): Recorded 270 feature(s) to file `C:\Users\COBRA_~1\AppData\Local\Temp\04_Merge_eindstatistieken_met_shape_133725\inspector.ffs'
+2018-07-18 13:37:27|   1.5|  0.0|STATS |Destination Feature Type Routing Correlator(RoutingFactory): Tested 270 input feature(s), wrote 270 output feature(s): 0 matched merge filters, 270 were routed to output, 0 could not be routed.
+2018-07-18 13:37:27|   1.5|  0.0|STATS |Final Output Nuker(TeeFactory): Cloned 0 input feature(s) into 0 output feature(s)
+2018-07-18 13:37:27|   1.5|  0.0|STATS |f_23(CreationFactory): Created 1 features
+2018-07-18 13:37:27|   1.5|  0.0|STATS |f_24(TeeFactory): Cloned 1 input feature(s) into 0 output feature(s)
+2018-07-18 13:37:27|   1.5|  0.0|INFORM|=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2018-07-18 13:37:27|   1.5|  0.0|INFORM|Feature output statistics for `ESRISHAPE' writer using keyword `ESRISHAPE_2':
+2018-07-18 13:37:27|   1.5|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2018-07-18 13:37:27|   1.5|  0.0|STATS |                               Features Written
+2018-07-18 13:37:27|   1.5|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2018-07-18 13:37:27|   1.5|  0.0|STATS |Statistieken_percelen (Statistieken_percelen)                              270
+2018-07-18 13:37:27|   1.5|  0.0|STATS |==============================================================================
+2018-07-18 13:37:27|   1.5|  0.0|STATS |Total Features Written                                                     270
+2018-07-18 13:37:27|   1.5|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2018-07-18 13:37:27|   1.5|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2018-07-18 13:37:27|   1.5|  0.0|STATS |                            Features Read Summary
+2018-07-18 13:37:27|   1.5|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2018-07-18 13:37:27|   1.5|  0.0|STATS |CSV                                                                        270
+2018-07-18 13:37:27|   1.5|  0.0|STATS |Omgevormde_data_pilotgebied_SBIR_MAAN_fase2                              12081
+2018-07-18 13:37:27|   1.5|  0.0|STATS |==============================================================================
+2018-07-18 13:37:27|   1.5|  0.0|STATS |Total Features Read                                                      12351
+2018-07-18 13:37:27|   1.5|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2018-07-18 13:37:27|   1.5|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2018-07-18 13:37:27|   1.5|  0.0|STATS |                           Features Written Summary
+2018-07-18 13:37:27|   1.5|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2018-07-18 13:37:27|   1.5|  0.0|STATS |Statistieken_percelen                                                      270
+2018-07-18 13:37:27|   1.5|  0.0|STATS |==============================================================================
+2018-07-18 13:37:27|   1.5|  0.0|STATS |Total Features Written                                                     270
+2018-07-18 13:37:27|   1.5|  0.0|STATS |=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+2018-07-18 13:37:27|   1.5|  0.0|INFORM|Translation was SUCCESSFUL with 3 warning(s) (1 feature(s) output)
+2018-07-18 13:37:27|   1.5|  0.0|INFORM|FME Session Duration: 2.0 seconds. (CPU: 1.1s user, 0.3s system)
+2018-07-18 13:37:27|   1.5|  0.0|INFORM|END - ProcessID: 11064, peak process memory usage: 163876 kB, current process memory usage: 105324 kB

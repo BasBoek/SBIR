@@ -7,29 +7,26 @@ library(Publish)
 library(calibrate)
 #library(bfast)
 library(data.table)  
-source("R/03a_mutation_determinator.R")
+source("R/03a_mutation_determinator.R") # Laad een functie die bepaald of iets een outlier is of niet.
 
-DIR_outliers  <- "C:/Data/SBIR/data/Statistics/all_sats/02_outliers/"
-DIR_yearstats <- "C:/Data/SBIR/data/Statistics/all_sats/03_yearstats/"
-DIR_yearstats_1_file <- "C:/Data/SBIR/data/Statistics/all_sats/03_yearstats_1_file/"
+DIR_outliers         <- "C:/Data/SBIR/data/Statistics/all_sats/02_outliers/"
+DIR_yearstats        <- "C:/Data/SBIR/data/Statistics/all_sats/03_yearstats/01_separate/"
+DIR_yearstats_1_file <- "C:/Data/SBIR/data/Statistics/all_sats/03_yearstats/02_all/"
 
 ############################################
 ##############  READING DATA ###############
 ############################################
 
-# Inlezen stats data rapideye en landsat
-
-files <- list.files(path = "C:/Data/SBIR/data/Statistics/all_sats/01_perceelstats/",pattern = ".csv", recursive=F, full.names=T)
-temp <- lapply(files, fread, sep=",")
-data <- rbindlist( temp )
-data <- data[!duplicated(data)] # if during parallel processing same data is analysed
-data <- na.omit(data) # mogelijk door zelfde pixel
+files <- list.files(path = "C:/Data/SBIR/data/Statistics/all_sats/01_perceelstats/01_chunks",pattern = "zonal_stats", recursive=F, full.names=T)
+temp  <- lapply(files, fread, sep=",")
+data1  <- rbindlist( temp )
+data2  <- data1[!duplicated(data1)] # if during parallel processing same data is analysed
+data  <- na.omit(data2) # mogelijk door zelfde pixel
 names(data) <- c("objectid", "beeld", "band", "npixels", "mean", "sd", "median", "max", "min", "q05", "q10", "q90", "q95")
-
 ## writing data to 1 file
-#write.csv(data,"C:/Data/SBIR/data/Statistics/all_sats/01_perceelstats/perceelstats_all.csv", row.names=F)
+write.csv(data,"C:/Data/SBIR/data/Statistics/all_sats/01_perceelstats/02_all/perceelstats_all.csv", row.names=F)
 
-rm(temp, files)
+rm(temp, files, data1, data2)
 
                 ############################################
                 ##############  Creating variables #########
@@ -48,10 +45,9 @@ data$cov      <- data$sd / data$mean
 
                 ############################################
                 ##############  Inspecting dataset #########
-                ############################################
+                ############################################ [OPTIONAL & DELETABLE]
 
 
-test <- data$cov[data$cov < 5]
 hist(data$cov[data$cov < 0.2], na.rm=T, breaks=300)
 hist(data$cov[data$cov > 3 & data$cov < 80], na.rm=T, breaks=300)
 quantile(data$cov, seq(0,1,0.001), na.rm=T)
@@ -63,15 +59,15 @@ quantile(data$difmax, seq(0,1,0.05), na.rm=T)
                 ##############  Mutatie of niet #########
                 #########################################
 
+## Voor testen
+PERCEEL <- 1317071
+SD <- 2 
+BAND <- 1 
 
-#test <- data[order(data$date), ]
-
+## Input voor de for loop
 perceelnamen <- unique(data$objectid)
 sds <- c(1.5, 2.0, 2.5, 3.0) # Na eerste inspectie data besloten het aantal SD's tussen 1.5 en 3.0 te houden
-i <- 0
-PERCEEL <- perceelnamen[88]
-SD <- 2
-BAND <- 1
+i <- 0 
 for(PERCEEL in perceelnamen){
   for(BAND in 1:3){
     mean_difmax     <-  mean(data$difmax[data$objectid == PERCEEL & data$band == BAND], na.rm=T)
@@ -114,13 +110,13 @@ for(PERCEEL in perceelnamen){
       muts$sd <- SD
       muts$nr_beelden <- nrow(muts1)
       if(i == 1){
-        muts_all <- muts
+        muts_all <- muts # create variable muts_all if first run
       } else {
-        muts_all <- rbind(muts_all, muts)
+        muts_all <- rbind(muts_all, muts) # append rows to muts_all
       }
     }
   }
-  #write.csv(muts_all, paste(DIR_outliers, "perceelstats_blieb", PERCEEL, ".csv", sep = ""), row.names=F)
+  write.csv(muts_all, paste(DIR_outliers, "outliers_", PERCEEL, ".csv", sep = ""), row.names=F)
   muts_all <- muts_all[0,]
   print(i/(length(sds)*3))
 }
@@ -131,23 +127,22 @@ rm(muts, muts_all,muts1, muts2, muts3, muts4, muts5, muts6, result, input_difmax
                 ##############  Alles in 1 file #########
                 #########################################
 
-files <- list.files(path = DIR_outliers ,pattern = ".csv", full.names=T)
+files <- list.files(path = DIR_outliers ,pattern = "outliers", full.names=T)
 temp <- lapply(files, fread, sep=",")
 muts_all <- rbindlist( temp )
 muts_all$year <- substr( muts_all$date, 1,4)
-
-tail(muts_all)
 
                 #######################################################
                 ############  Aggregeer naar info per perceel #########
                 #######################################################
 
+## Voor testen
 YEAR <- 2015
 BAND <- 1
 VARIABLE <- "difmax"
 
 variables <- unique(muts_all$value)
-years <- c(2016) # Welk jaar / Welke jaren van de sat.beelden moeten er meegenomen worden?
+years <- c(2015, 2016, 2017) # Welk jaar / Welke jaren van de sat.beelden moeten er meegenomen worden?
 for(VARIABLE in variables){
   muts_sell <- muts_all[muts_all$value == VARIABLE,]
   for(YEAR in years){
@@ -164,7 +159,7 @@ for(VARIABLE in variables){
 
       stats <- as.data.frame(cbind(agg15,agg20,agg25,agg30))
       
-      # derivates
+      # Extra informatie
       temp <- stats
       temp[temp > 0] <- 1
       cutoff <- rowSums(temp)/2+0.5
@@ -181,19 +176,21 @@ for(VARIABLE in variables){
       percelen <- aggregate(muts_sel15$outlier, by=list(muts_sel15$perceel), FUN = sum)$Group.1
       stats$perceel <- percelen
       
-      #write.csv(stats, paste(DIR_yearstats, VARIABLE, "_", YEAR, "_b", BAND, ".csv", sep=""), row.names=F)
+      write.csv(stats, paste(DIR_yearstats, VARIABLE, "_", YEAR, "_b", BAND, ".csv", sep=""), row.names=F)
       print(VARIABLE)
     }
   }
 }
 
-rm(agg15,agg20,agg25,agg30,muts_sel15,muts_sel20,muts_sel25,muts_sel30, muts_sell)
+rm(agg15,agg20,agg25,agg30,muts_sel15,muts_sel20,muts_sel25,muts_sel30, muts_sell) # Verwijder tijdelijke variabelen
 
+## Lees alle csv's in, plak ze onder elkaar (= rbindlist) en schrijf als 1 file weg
 files <- list.files(path = DIR_yearstats, pattern = ".csv", full.names=T)
 temp <- lapply(files, fread, sep=",")
 muts_sum <- rbindlist( temp )
 muts_sum$mutlike <- muts_sum$agg20 * muts_sum$cutoff
 
+##
 write.csv(muts_sum, paste(DIR_yearstats_1_file, "Yearstats_all.csv", sep=""), row.names=F)
 
 

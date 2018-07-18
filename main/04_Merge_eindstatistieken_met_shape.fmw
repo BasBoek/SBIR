@@ -1,10 +1,10 @@
 #! <?xml version="1.0" encoding="UTF-8" ?>
 #! <WORKSPACE
 #    Command-line to run this workspace:
-#        "C:\Program Files\FME\fme.exe" C:\Data\SBIR\modellen\03_Merge_eindstatistieken_met_shape.fmw
+#        "C:\Program Files\FME\fme.exe" C:\Git_SBIR\SBIR_MAAN\main\04_Merge_eindstatistieken_met_shape.fmw
 #              --SourceDataset_ESRISHAPE "C:\Data\SBIR\data\Pilotdata_omgevormd\Omgevormde_data_pilotgebied_SBIR_MAAN_fase2.shp"
 #              --DestDataset_ESRISHAPE "C:\Data\SBIR\data\Statistics\all_sats\04_yearstats_shape"
-#              --SourceDataset_CSV2_3 "C:\Data\SBIR\data\Statistics\all_sats\03_yearstats_1_file\Yearstats_all.csv"
+#              --SourceDataset_CSV2_3 "C:\Data\SBIR\data\Statistics\all_sats\03_yearstats\02_all\Yearstats_all.csv"
 #    
 #!   ATTR_TYPE_ENCODING="SDF"
 #!   BEGIN_PYTHON=""
@@ -19,8 +19,8 @@
 #!   END_TCL=""
 #!   EXPLICIT_BOOKMARK_ORDER="false"
 #!   FME_BUILD_NUM="18312"
-#!   FME_DOCUMENT_GUID="e2b2cb87-5f1c-4b47-b40d-7b01b4e857d4"
-#!   FME_DOCUMENT_PRIORGUID="290f8767-6ae3-47c6-96d7-d27f2d37ac34,ebbbda48-d245-4ff6-900a-a43200cbc832,6a377ca7-7a2e-4dd4-972c-35348d6fcce6"
+#!   FME_DOCUMENT_GUID="5b469c28-b370-404a-929a-af1f41e19958"
+#!   FME_DOCUMENT_PRIORGUID="290f8767-6ae3-47c6-96d7-d27f2d37ac34,ebbbda48-d245-4ff6-900a-a43200cbc832,6a377ca7-7a2e-4dd4-972c-35348d6fcce6,e2b2cb87-5f1c-4b47-b40d-7b01b4e857d4"
 #!   FME_GEOMETRY_HANDLING="Enhanced"
 #!   FME_IMPLICIT_CSMAP_REPROJECTION_MODE="Auto"
 #!   FME_REPROJECTION_ENGINE="FME"
@@ -29,7 +29,7 @@
 #!   HISTORY=""
 #!   IGNORE_READER_FAILURE="No"
 #!   LAST_SAVE_BUILD="FME(R) 2018.0.1.1 (20180615 - Build 18312 - WIN64)"
-#!   LAST_SAVE_DATE="2018-06-21T12:19:46"
+#!   LAST_SAVE_DATE="2018-07-18T13:37:21"
 #!   LOG_FILE=""
 #!   LOG_MAX_RECORDED_FEATURES="200"
 #!   MARKDOWN_DESCRIPTION=""
@@ -47,7 +47,7 @@
 #!   TITLE=""
 #!   USAGE=""
 #!   USE_MARKDOWN=""
-#!   VIEW_POSITION="-1098.5 -203.601"
+#!   VIEW_POSITION="-3035.07 0"
 #!   WARN_INVALID_XFORM_PARAM="Yes"
 #!   WORKSPACE_VERSION="1"
 #!   ZOOM_SCALE="66"
@@ -66,7 +66,7 @@
 #!   WRITE_DEFS="true"
 #!   DEFLINE_TEMPLATE="SHAPE_GEOMETRY {FME_GEN_GEOMETRY}"
 #!   DEFLINE_ATTRS="true"
-#!   EXPOSABLE_ATTRS="multi_reader_keyword char(50) shape_geometry_error{} char(254) fme_rotation double fme_start_angle double fme_secondary_axis double SHAPE_GEOMETRY char(50) multi_reader_full_id long shape_measures char(254) fme_primary_axis double multi_reader_type char(50) fme_fill_color char(50) fme_text_size double fme_feature_type char(50) fme_sweep_angle double fme_basename char(50) multi_reader_id long fme_dataset char(50) fme_color char(50) fme_geometry char(50) fme_text_string char(50) fme_type char(50)"
+#!   EXPOSABLE_ATTRS="multi_reader_type char(50) fme_secondary_axis double fme_fill_color char(50) multi_reader_id long fme_start_angle double shape_geometry_error{} char(254) fme_sweep_angle double shape_measures char(254) fme_text_size double fme_color char(50) fme_basename char(50) multi_reader_full_id long fme_dataset char(50) fme_feature_type char(50) fme_geometry char(50) fme_primary_axis double fme_text_string char(50) multi_reader_keyword char(50) fme_type char(50) fme_rotation double SHAPE_GEOMETRY char(50)"
 #!   DEFLINE_PARMS=""
 #!   ATTR_INDEX_TYPES="Indexed"
 #!   ATTR_NAME_INVALID_CHARS=""
@@ -124,7 +124,7 @@
 #!   WRITE_DEFS="true"
 #!   DEFLINE_TEMPLATE=""
 #!   DEFLINE_ATTRS="true"
-#!   EXPOSABLE_ATTRS="multi_reader_keyword string fme_rotation string fme_start_angle string fme_secondary_axis string csv_skipped_line string multi_reader_full_id string csv_total_number_of_columns uint32 multi_reader_type string fme_primary_axis string fme_fill_color string fme_text_size string fme_feature_type string fme_sweep_angle string fme_basename string multi_reader_id string fme_dataset string csv_type string fme_color string fme_geometry string fme_text_string string fme_type string csv_number_of_fields uint32 csv_line_number uint64"
+#!   EXPOSABLE_ATTRS="multi_reader_type string fme_secondary_axis string fme_fill_color string csv_type string multi_reader_id string fme_start_angle string csv_skipped_line string fme_sweep_angle string csv_number_of_fields uint32 csv_total_number_of_columns uint32 fme_text_size string fme_color string fme_basename string multi_reader_full_id string fme_dataset string fme_feature_type string fme_geometry string fme_primary_axis string fme_text_string string multi_reader_keyword string csv_line_number uint64 fme_type string fme_rotation string"
 #!   DEFLINE_PARMS=""
 #!   ATTR_INDEX_TYPES=""
 #!   ATTR_NAME_INVALID_CHARS=""
@@ -182,7 +182,7 @@
 #!   WRITE_DEFS="true"
 #!   DEFLINE_TEMPLATE="SHAPE_GEOMETRY {FME_GEN_GEOMETRY} shape_dimension auto"
 #!   DEFLINE_ATTRS="true"
-#!   EXPOSABLE_ATTRS="fme_type char(50) fme_feature_type char(50) fme_secondary_axis double shape_measures char(254) fme_text_size double fme_rotation double fme_dataset char(50) fme_text_string char(50) fme_color char(50) fme_fill_color char(50) fme_start_angle double fme_basename char(50) fme_primary_axis double fme_sweep_angle double fme_geometry char(50) SHAPE_GEOMETRY char(50)"
+#!   EXPOSABLE_ATTRS="fme_dataset char(50) SHAPE_GEOMETRY char(50) fme_rotation double fme_geometry char(50) shape_measures char(254) fme_fill_color char(50) fme_primary_axis double fme_basename char(50) fme_text_string char(50) fme_text_size double fme_feature_type char(50) fme_secondary_axis double fme_color char(50) fme_start_angle double fme_type char(50) fme_sweep_angle double"
 #!   DEFLINE_PARMS="&quot;GUI OPTIONAL NAMEDGROUP shape_layer_group shape_dimension Shapefile&quot; &quot;&quot; &quot;GUI LOOKUP_CHOICE shape_dimension Dimension&lt;space&gt;From&lt;space&gt;First&lt;space&gt;Feature,auto%2D,2d%2D&lt;space&gt;+&lt;space&gt;Measures,2dm%3D&lt;space&gt;+&lt;space&gt;Measures,3dm Output Dimension:&quot; auto "
 #!   ATTR_INDEX_TYPES="Indexed"
 #!   ATTR_NAME_INVALID_CHARS=". -%[]&quot;!?*&apos;&amp;\/{}"
@@ -1257,7 +1257,7 @@
 #! />
 #! <GLOBAL_PARAMETER
 #!   GUI_LINE="GUI MULTIFILE SourceDataset_CSV2_3 CSV/Compressed_CSV/TEXT_Files(*.csv;*.gz;*.txt)|*.csv;*.gz;*.txt|CSV_Files(*.csv)|*.csv|Compressed_CSV_Files(*.gz)|*.gz|Text_Files(*.txt)|*.txt|All_Files|* Source CSV (Comma Separated Value) File(s):"
-#!   DEFAULT_VALUE="C:\Data\SBIR\data\Statistics\all_sats\03_yearstats_1_file\Yearstats_all.csv"
+#!   DEFAULT_VALUE="C:\Data\SBIR\data\Statistics\all_sats\03_yearstats\02_all\Yearstats_all.csv"
 #!   IS_STAND_ALONE="false"
 #! />
 #! </GLOBAL_PARAMETERS>
@@ -1574,7 +1574,7 @@ DEFAULT_MACRO SourceDataset_ESRISHAPE C:\Data\SBIR\data\Pilotdata_omgevormd\Omge
 GUI MULTIFILE SourceDataset_ESRISHAPE Shapefiles(*.shp)|*.shp|Compressed_Shapefiles(*.shz)|*.shz|All_Files(*)|* Source Esri Shapefile(s):
 DEFAULT_MACRO DestDataset_ESRISHAPE C:\Data\SBIR\data\Statistics\all_sats\04_yearstats_shape
 GUI DIRNAME DestDataset_ESRISHAPE Destination Esri Shapefile Folder:
-DEFAULT_MACRO SourceDataset_CSV2_3 C:\Data\SBIR\data\Statistics\all_sats\03_yearstats_1_file\Yearstats_all.csv
+DEFAULT_MACRO SourceDataset_CSV2_3 C:\Data\SBIR\data\Statistics\all_sats\03_yearstats\02_all\Yearstats_all.csv
 GUI MULTIFILE SourceDataset_CSV2_3 CSV/Compressed_CSV/TEXT_Files(*.csv;*.gz;*.txt)|*.csv;*.gz;*.txt|CSV_Files(*.csv)|*.csv|Compressed_CSV_Files(*.gz)|*.gz|Text_Files(*.txt)|*.txt|All_Files|* Source CSV (Comma Separated Value) File(s):
 INCLUDE [ if {{$(SourceDataset_ESRISHAPE)} == {}} { puts_real {Parameter 'SourceDataset_ESRISHAPE' must be given a value.}; exit 1; }; ]
 INCLUDE [ if {{$(DestDataset_ESRISHAPE)} == {}} { puts_real {Parameter 'DestDataset_ESRISHAPE' must be given a value.}; exit 1; }; ]
@@ -1901,7 +1901,7 @@ ESRISHAPE_2_DATASET "$(DestDataset_ESRISHAPE_2)"
 
 #! END_HEADER
 
-LOG_FILENAME "$(FME_MF_DIR)03_Merge_eindstatistieken_met_shape.log"
+LOG_FILENAME "$(FME_MF_DIR)04_Merge_eindstatistieken_met_shape.log"
 LOG_APPEND NO
 LOG_MAX_FEATURES 200
 LOG_MAX_RECORDED_FEATURES 200
@@ -1927,7 +1927,7 @@ MULTI_READER_CONTINUE_ON_READER_FAILURE No
 
 # -------------------------------------------------------------------------
 
-MACRO WORKSPACE_NAME 03_Merge_eindstatistieken_met_shape
+MACRO WORKSPACE_NAME 04_Merge_eindstatistieken_met_shape
 MACRO FME_VIEWER_APP fmedatainspector
 # -------------------------------------------------------------------------
 
