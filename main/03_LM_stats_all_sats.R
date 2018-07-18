@@ -47,7 +47,6 @@ data$cov      <- data$sd / data$mean
                 ##############  Inspecting dataset #########
                 ############################################ [OPTIONAL & DELETABLE]
 
-
 hist(data$cov[data$cov < 0.2], na.rm=T, breaks=300)
 hist(data$cov[data$cov > 3 & data$cov < 80], na.rm=T, breaks=300)
 quantile(data$cov, seq(0,1,0.001), na.rm=T)
@@ -55,9 +54,23 @@ quantile(data$cov, seq(0,1,0.001), na.rm=T)
 hist(data$mut_low[data$mut_low < 25], na.rm=T, breaks=300)
 quantile(data$difmax, seq(0,1,0.05), na.rm=T)
 
-                #########################################
-                ##############  Mutatie of niet #########
-                #########################################
+
+############################################
+##############  mean cov en difmax #########
+############################################
+
+agg_difmax <- aggregate(data$difmax, by=list(data$objectid, data$year), FUN = mean, na.rm=T)
+names(agg_difmax) <- c("perceel", "jaar", "mean_difmax")
+
+agg_cov    <- as.data.frame(aggregate(data$cov, by=list(data$year, data$objectid), FUN = mean, na.rm=T)$x)
+names(agg_cov) <- c("mean_cov")
+agg_thresholds <- cbind(agg_difmax, agg_cov)
+write.csv(agg_thresholds, "C:/Data/SBIR/data/Statistics/all_sats/03_yearstats/03_mean_cov_difmax/COV_and_difmax.csv", row.names=F)
+plot(agg_thresholds$mean_cov, agg_thresholds$mean_difmax)
+
+#########################################
+##############  Mutatie of niet #########
+#########################################
 
 ## Voor testen
 PERCEEL <- 1317071
@@ -70,10 +83,6 @@ sds <- c(1.5, 2.0, 2.5, 3.0) # Na eerste inspectie data besloten het aantal SD's
 i <- 0 
 for(PERCEEL in perceelnamen){
   for(BAND in 1:3){
-    mean_difmax     <-  mean(data$difmax[data$objectid == PERCEEL & data$band == BAND], na.rm=T)
-    mean_cov        <-  mean(data$cov[data$objectid == PERCEEL & data$band == BAND], na.rm=T)
-    #print(c(mean_difmax, mean_cov))
-    
     for(SD in sds){
       i <- i + 1
       date            <-  data$date[data$objectid     == PERCEEL & data$band == BAND]
@@ -103,8 +112,8 @@ for(PERCEEL in perceelnamen){
       muts6$value <- "min10"
       
       muts <- rbind(muts1, muts2, muts3, muts4, muts5, muts6)
-      muts$mean_cov <- mean_cov
-      muts$mean_difmax <- mean_difmax
+      #muts$mean_cov <- mean_cov
+      #muts$mean_difmax <- mean_difmax
       muts$perceel <- PERCEEL
       muts$band <- BAND
       muts$sd <- SD
@@ -147,15 +156,19 @@ for(VARIABLE in variables){
   muts_sell <- muts_all[muts_all$value == VARIABLE,]
   for(YEAR in years){
     for(BAND in 1:3){
+      
+      ## Get number of mutations in a certain year for a certain band for all the thresholds
       muts_sel15 <- muts_sell[muts_sell$band == BAND & muts_sell$year == YEAR & muts_sell$sd == 1.5,]
       muts_sel20 <- muts_sell[muts_sell$band == BAND & muts_sell$year == YEAR & muts_sell$sd == 2,]
       muts_sel25 <- muts_sell[muts_sell$band == BAND & muts_sell$year == YEAR & muts_sell$sd == 2.5,]
       muts_sel30 <- muts_sell[muts_sell$band == BAND & muts_sell$year == YEAR & muts_sell$sd == 3,]
-
       agg15 <- aggregate(muts_sel15$outlier, by=list(muts_sel15$perceel, muts_sel15$sd), FUN = sum, na.rm=T)$x
       agg20 <- aggregate(muts_sel20$outlier, by=list(muts_sel20$perceel, muts_sel20$sd), FUN = sum, na.rm=T)$x
       agg25 <- aggregate(muts_sel25$outlier, by=list(muts_sel25$perceel, muts_sel25$sd), FUN = sum, na.rm=T)$x
       agg30 <- aggregate(muts_sel30$outlier, by=list(muts_sel30$perceel, muts_sel30$sd), FUN = sum, na.rm=T)$x
+      
+      mean_cov_year    <- muts_sell[muts_sell$band == BAND & muts_sell$year == YEAR & muts_sell$sd == 1.5,]
+      mean_difmax_year <- 
 
       stats <- as.data.frame(cbind(agg15,agg20,agg25,agg30))
       
