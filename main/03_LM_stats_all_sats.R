@@ -61,19 +61,22 @@ quantile(data$difmax, seq(0,1,0.05), na.rm=T)
 
 agg_difmax <- aggregate(data$difmax, by=list(data$objectid, data$year), FUN = mean, na.rm=T)
 names(agg_difmax) <- c("perceel", "jaar", "mean_difmax")
-
-agg_cov    <- as.data.frame(aggregate(data$cov, by=list(data$year, data$objectid), FUN = mean, na.rm=T)$x)
+agg_cov    <- round(as.data.frame(aggregate(data$cov, by=list(data$year, data$objectid), FUN = mean, na.rm=T)$x),5)
 names(agg_cov) <- c("mean_cov")
-agg_thresholds <- cbind(agg_difmax, agg_cov)
+agg_npixels    <- round(as.data.frame(aggregate(data$npixels, by=list(data$year, data$objectid), FUN = mean, na.rm=T)$x))
+names(agg_npixels) <- c("mean_npixels")
+
+agg_thresholds <- cbind(agg_difmax, agg_cov, agg_npixels)
+
 write.csv(agg_thresholds, "C:/Data/SBIR/data/Statistics/all_sats/03_yearstats/03_mean_cov_difmax/COV_and_difmax.csv", row.names=F)
-plot(agg_thresholds$mean_cov, agg_thresholds$mean_difmax)
+plot(agg_thresholds$mean_npixels, agg_thresholds$mean_difmax)
 
 #########################################
 ##############  Mutatie of niet #########
 #########################################
 
 ## Voor testen
-PERCEEL <- 1317071
+PERCEEL <- perceelnamen[2]# 1317071
 SD <- 2 
 BAND <- 1 
 
@@ -112,12 +115,11 @@ for(PERCEEL in perceelnamen){
       muts6$value <- "min10"
       
       muts <- rbind(muts1, muts2, muts3, muts4, muts5, muts6)
-      #muts$mean_cov <- mean_cov
-      #muts$mean_difmax <- mean_difmax
       muts$perceel <- PERCEEL
       muts$band <- BAND
       muts$sd <- SD
       muts$nr_beelden <- nrow(muts1)
+      
       if(i == 1){
         muts_all <- muts # create variable muts_all if first run
       } else {
@@ -190,9 +192,9 @@ for(VARIABLE in variables){
       stats$perceel <- percelen
       
       write.csv(stats, paste(DIR_yearstats, VARIABLE, "_", YEAR, "_b", BAND, ".csv", sep=""), row.names=F)
-      print(VARIABLE)
     }
   }
+  print(VARIABLE)
 }
 
 rm(agg15,agg20,agg25,agg30,muts_sel15,muts_sel20,muts_sel25,muts_sel30, muts_sell) # Verwijder tijdelijke variabelen

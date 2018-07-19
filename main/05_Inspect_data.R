@@ -1,67 +1,59 @@
-# Author: Bastiaen Boekelo
-# Date: June 2018
-# Goal: Inspect correlations data with calculated statistics
+## Author: Bastiaen Boekelo
+## Date: June 2018
+
+## Goal:
+## We hebben nu per perceel verschillende statistieken. 
+## Per perceel zijn er voor verschillende variabelen het aantal mutaties geteld.  
+## Deze mutaties zijn voortgekomen uit afwijkingen t.o.v. het jaargemiddelde. Wijkt het teveel af, dan telde de observatie als een mutatie.
+## We hebben nu 4 verschillende thresholds (1.5, 2, 2.5, 3, 3.5) en voor elke combinatie is er per observatie (per band) bepaald of de waarde 'verdacht' is
+## Uitgangspunt van dit script is om te onderzoeken welke combinatie (band, threshold en variabelenset) het beste resultaat geeft.
+## Daarvoor is de functie GET_STATS geschreven die elke combinatie langsgaat.
 
 library(raster)
 library(maptools)
 library(rgdal)
 library(plyr)
-library(xlsx)
 rm(list=ls())
 
-# Gratis lesje: never use (!) 'readShapePoly', but readOGR instead if you don't want to screw your data
-p_raw <- readOGR(dsn = 'C:/Data/SBIR/data/Statistics/all_sats/04_yearstats_shape', layer = 'Statistieken_percelen')
+ODIR_stats <- "C:/Data/SBIR/data/Statistics/all_sats/05_variables/01_variable_sets/"
+ODIR_stats_all <- "C:/Data/SBIR/data/Statistics/all_sats/05_variables/02_all/"
 
+##############################
+#### Lees polygondata in #####
+##############################
+
+p_raw <- readOGR(dsn = 'C:/Data/SBIR/data/Statistics/all_sats/04_yearstats_shape', layer = 'Statistieken_percelen')
 pdf <- as.data.frame(p_raw)
 p <- na.omit(pdf)
-blob <- pdf[rowSums(is.na(pdf)) > 0,] 
+rm(pdf,p_raw)
 
-rm(pdf)
+## Hoeveel thresholds zijn er?
 
-################################################################################
-##############################################################################
+nr_thresholds <- 4
 
-#### AANNAME: ALS PERCEEL NOOIT OUTLIER HOGER DAN 1 SD HEEFT GEHAD -> ONGEMUTEERD
-BAND <- 1
-p_sel <- p[p$band == BAND,]
 
-index <- p_sel$agg10 > 0
-p_sel$mutatie <- 0
-p_sel$mutatie[index] <- 1 
-  
-p_not_mutated <- p_sel[p_sel$categorie == "Nooit gemuteerd geweest",]
-p_mutated2015 <- p_sel[p_sel$periode == "2015_2016" & p_sel$year == 2015,]
-p_mutated2016 <- p_sel[p_sel$periode == "2016_2017" & p_sel$year == 2016,]
-
-sum(p_not_mutated$mutatie) # [liefst   0%] 49,1% van 14392 aangemerkt als gemuteerd
-sum(p_mutated2015$mutatie) # [liefst 100%] 49,7% van 732 aangemerkt als gemuteerd 
-sum(p_mutated2016$mutatie) # [liefst 100%] 11,3% van 1278 aangemerkt als gemuteerd
-
-#### AANNAME: ALS PERCEEL NOOIT OUTLIER HOGER DAN 1 SD HEEFT GEHAD -> ONGEMUTEERD
-
-####################################################################################################
 ####################################################################################################
 ####################################################################################################
 ################################ Per Variabele per band ############################################
-####################################################################################################
 ####################################################################################################
 ####################################################################################################
 
 MOMENT <- 2
 BAND <- 3
 AGG <- 2
-## selectie criteria
 
-jaren <- c("2015", "2015_2016", "2016",  "2016_2017", "2017", "2017_2018")
+#jaren <- c("2015", "2015_2016", "2016",  "2016_2017", "2017", "2017_2018")
+jaren <- c("2015", "2015_2016", "2016",  "2016_2017")
+
 run <- 0
 GET_STATS <- function(p, nr_sel_var, jaren){
   run <- 0
-  # variable combinations
+  ## variable combinations
   nr_var <- nr_sel_var
   combi <- combn(1:6, nr_var)
   
   for(MOMENT in 1:(length(jaren)/2)){
-    for(AGG in 1:7){
+    for(AGG in 1:nr_thresholds){
       for(BAND in 1:3){
         p1m <- p[p$band == BAND & p$year == jaren[MOMENT*2-1] & p$periode   == jaren[MOMENT*2]           & p$variable == "mut_high",][,AGG]
         p1o <- p[p$band == BAND & p$year == jaren[MOMENT*2-1] & p$categorie == "Nooit gemuteerd geweest" & p$variable == "mut_high",][,AGG]
@@ -180,42 +172,43 @@ GET_STATS <- function(p, nr_sel_var, jaren){
 
 
 GET_STATS(p, 1, jaren)
-write.csv(allstats, paste("C:/Data/SBIR/data/Statistics/all_sats/05_variables/varstats_", 1, ".csv", sep=""), row.names=F)
+write.csv(allstats, paste(ODIR_stats, "varstats_", 1, ".csv", sep=""), row.names=F)
 GET_STATS(p, 2, jaren)
-write.csv(allstats, paste("C:/Data/SBIR/data/Statistics/all_sats/05_variables/varstats_", 2, ".csv", sep=""), row.names=F)
+write.csv(allstats, paste(ODIR_stats, "varstats_", 2, ".csv", sep=""), row.names=F)
 GET_STATS(p, 3, jaren)
-write.csv(allstats, paste("C:/Data/SBIR/data/Statistics/all_sats/05_variables/varstats_", 3, ".csv", sep=""), row.names=F)
+write.csv(allstats, paste(ODIR_stats, "varstats_", 3, ".csv", sep=""), row.names=F)
 GET_STATS(p, 4, jaren)
-write.csv(allstats, paste("C:/Data/SBIR/data/Statistics/all_sats/05_variables/varstats_", 4, ".csv", sep=""), row.names=F)
+write.csv(allstats, paste(ODIR_stats, "varstats_", 4, ".csv", sep=""), row.names=F)
 GET_STATS(p, 5, jaren)
-write.csv(allstats, paste("C:/Data/SBIR/data/Statistics/all_sats/05_variables/varstats_", 5, ".csv", sep=""), row.names=F)
+write.csv(allstats, paste(ODIR_stats, "varstats_", 5, ".csv", sep=""), row.names=F)
 GET_STATS(p, 6, jaren)
-write.csv(allstats, paste("C:/Data/SBIR/data/Statistics/all_sats/05_variables/varstats_", 6, ".csv", sep=""), row.names=F)
+write.csv(allstats, paste(ODIR_stats, "varstats_", 6, ".csv", sep=""), row.names=F)
 
 
-####################################################################################################
 ####################################################################################################
 ####################################################################################################
 ################################      Per Variabele     ############################################
-####################################################################################################
 ####################################################################################################
 ####################################################################################################
 
 MOMENT <- 1
 BAND <- 3
 AGG <- 2
-## selectie criteria
-
-jaren <- c("2015", "2015_2016", "2016",  "2016_2017", "2017", "2017_2018")
 run <- 0
+
+## selectie criteria
+#jaren <- c("2015", "2015_2016", "2016",  "2016_2017", "2017", "2017_2018")
+jaren <- c("2015", "2015_2016", "2016",  "2016_2017")
+
 GET_STATS_NOBAND <- function(p, nr_sel_var, jaren){
   run <- 0
-  # variable combinations
+  
+  ## variable combinations
   nr_var <- nr_sel_var
   combi <- combn(1:6, nr_var)
   
   for(MOMENT in 1:(length(jaren)/2)){
-    for(AGG in 1:7){
+    for(AGG in 1:nr_thresholds){
       p1m1 <- p[p$band == 1 & p$year == jaren[MOMENT*2-1] & p$periode   == jaren[MOMENT*2]           & p$variable == "mut_high",][,AGG]
       p1o1 <- p[p$band == 1 & p$year == jaren[MOMENT*2-1] & p$categorie == "Nooit gemuteerd geweest" & p$variable == "mut_high",][,AGG]
       p2m1 <- p[p$band == 1 & p$year == jaren[MOMENT*2-1] & p$periode   == jaren[MOMENT*2]           & p$variable  == "mut_low",][,AGG]
@@ -287,7 +280,7 @@ GET_STATS_NOBAND <- function(p, nr_sel_var, jaren){
         for(i in 1:ncol(combi)){
           run <- run + 1
           
-          ################## for unmutated part ####################################
+          ################## for ongemuteerd ####################################
           
           i1 <- do$mut_high == 0
           i2 <- do$mut_low == 0
@@ -315,7 +308,7 @@ GET_STATS_NOBAND <- function(p, nr_sel_var, jaren){
           do$mutatie <- 0
           do$mutatie[index] <- 1 
           
-          ################## for mutated part ####################################
+          ################## for gemuteerd ####################################
           
           i1 <- dm$mut_high == 0
           i2 <- dm$mut_low == 0
@@ -373,22 +366,23 @@ GET_STATS_NOBAND <- function(p, nr_sel_var, jaren){
 
 
 GET_STATS_NOBAND(p, 1, jaren)
-write.csv(allstats, paste("C:/Data/SBIR/data/Statistics/all_sats/05_variables/varstats_bandsamen_", 1, ".csv", sep=""), row.names=F)
+write.csv(allstats, paste(ODIR_stats, "varstats_bandsamen", 1, ".csv", sep=""), row.names=F)
 GET_STATS_NOBAND(p, 2, jaren)
-write.csv(allstats, paste("C:/Data/SBIR/data/Statistics/all_sats/05_variables/varstats_bandsamen_", 2, ".csv", sep=""), row.names=F)
+write.csv(allstats, paste(ODIR_stats, "varstats_bandsamen", 2, ".csv", sep=""), row.names=F)
 GET_STATS_NOBAND(p, 3, jaren)
-write.csv(allstats, paste("C:/Data/SBIR/data/Statistics/all_sats/05_variables/varstats_bandsamen_", 3, ".csv", sep=""), row.names=F)
+write.csv(allstats, paste(ODIR_stats, "varstats_bandsamen", 3, ".csv", sep=""), row.names=F)
 GET_STATS_NOBAND(p, 4, jaren)
-write.csv(allstats, paste("C:/Data/SBIR/data/Statistics/all_sats/05_variables/varstats_bandsamen_", 4, ".csv", sep=""), row.names=F)
+write.csv(allstats, paste(ODIR_stats, "varstats_bandsamen", 4, ".csv", sep=""), row.names=F)
 GET_STATS_NOBAND(p, 5, jaren)
-write.csv(allstats, paste("C:/Data/SBIR/data/Statistics/all_sats/05_variables/varstats_bandsamen_", 5, ".csv", sep=""), row.names=F)
+write.csv(allstats, paste(ODIR_stats, "varstats_bandsamen", 5, ".csv", sep=""), row.names=F)
 GET_STATS_NOBAND(p, 6, jaren)
-write.csv(allstats, paste("C:/Data/SBIR/data/Statistics/all_sats/05_variables/varstats_bandsamen_", 6, ".csv", sep=""), row.names=F)
+write.csv(allstats, paste(ODIR_stats, "varstats_bandsamen", 6, ".csv", sep=""), row.names=F)
+
 
 
 # Inspect data
 
-files <- list.files(path = "C:/Data/SBIR/data/Statistics/all_sats/05_variables/",pattern = "varstats", recursive=T, full.names=T)
+files <- list.files(path = "C:/Data/SBIR/data/Statistics/all_sats/05_variables/01_variable_sets",pattern = "varstats", recursive=T, full.names=T)
 i <- 0
 for(FILE in files){
   i <- i + 1
@@ -399,23 +393,16 @@ for(FILE in files){
     data <- newdata
   }
 }
+write.csv(data,"C:/Data/SBIR/data/Statistics/all_sats/05_variables/02_all/all_var_combinations.csv", row.names=F)
 
-# 
+#####################################################
+####### Selection from data that scores well ########
+#####################################################
 
 data$ratio <- data$FN/data$TN
 data <- data[data$ratio < 0.03 & data$TN > 30 & data$FN < 5,]
 
-temp <- lapply(files, fread, sep=",")
-muts_all <- rbindlist( temp )
-names(muts_all) <- c("objectid", "beeld", "band", "npixels", "mean", "sd", "median", "max", "min", "q05", "q10", "q90", "q95")
-
-
-
-write.csv(p,"C:/Data/SBIR/data/Statistics/all_sats/alldata.csv", row.names=F)
-
-
-
-
+write.csv(data,"C:/Data/SBIR/data/Statistics/all_sats/05_variables/03_best_variable_combinations/stats_var_selection.csv", row.names=F)
 
 
 
